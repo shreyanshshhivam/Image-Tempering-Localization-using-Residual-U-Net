@@ -99,30 +99,23 @@ Save: best_resunet.pth, last_resunet.pth, final_resunet.pth
 python inference.py --img path/to/image.jpg --model final_resunet.pth
 
 
----
+
 
 🧪 Instructions for Testing
 
 1. After training, load the trained model:
 
-
-
 model.load_state_dict(torch.load("best_resunet.pth"))
 
 2. Pass your image through the preprocessing pipeline (resize → tensor → normalize)
 
-
 3. Run:
-
-
 
 pred = model(image_tensor.unsqueeze(0))
 
 4. Apply threshold 0.5:
 
-
-
 mask = (torch.sigmoid(pred) > 0.5).float()
 
 5. Visualize the mask overlay.
-6.
+ 
